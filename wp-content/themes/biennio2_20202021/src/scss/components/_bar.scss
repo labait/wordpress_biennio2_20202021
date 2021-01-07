@@ -1,0 +1,58 @@
+.header__toggle {
+  height: 2.4rem;
+  width: 2.4rem;
+  cursor: pointer;
+}
+
+.bar,
+.bar:after,
+.bar:before {
+  height: $bar-height;
+  background: #000;
+  border-radius: 10rem;
+}
+
+.bar {
+  width: $bar-width;
+  transform: translateY(-50%);
+  transition: all .1s $cubic-bezier;
+  top: 50%;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: #{$bar-width};
+    transition: top .3s .2s $cubic-bezier, bottom .3s .2s $cubic-bezier, transform .3s $cubic-bezier;
+  }
+
+  &:before {
+    bottom: $bar-spacing;
+  }
+
+  &:after {
+    top: $bar-spacing;
+  }
+
+  &.animate {
+    background: transparent;
+
+    &:after,
+    &:before {
+      background: #000;
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+      top: 0;
+      transition: top .3s $cubic-bezier, transform .3s .2s $cubic-bezier;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+      bottom: 0;
+      transition: bottom .3s $cubic-bezier, transform .3s .2s $cubic-bezier;
+    }
+  }
+}

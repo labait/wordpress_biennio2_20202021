@@ -1,0 +1,45 @@
+*.log
+wp-config.php
+wp-config.local.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+wp-content/themes/**/dist
+
+# Ignore starter related files
+wp-content/themes/incode_starter
+_private/starter_content.xml
+bin/setup.sh
+
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
+# node
+node_modules
+
+# editor files
+.vscode
+
+# folder view configuration files
+.DS_Store
+Desktop.ini
+
+# thumbnail cache files
+._*
+Thumbs.db
+
+# files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# visual Studio Code folder
+.vscode

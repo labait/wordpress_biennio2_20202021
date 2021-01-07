@@ -1,0 +1,95 @@
+/* HEADER MAIN
+  ----------------------------- */
+.header--main {
+  @extend .top-0;
+  z-index: 9;
+
+  .logged-in & {
+    top: 2.1rem;
+  }
+
+  // STICKY
+  &.sticky {
+    // Something happens
+  }
+
+  // STICKY HIDE
+  &.sticky-hide {
+    // Something when scroll to bottom
+  } 
+}
+
+/* HEADER OFFCANVAS
+  ----------------------------- */
+.header--offcanvas {
+  background: #EEE;
+  z-index: 8;
+
+  &.open {
+    li {
+      opacity: 1;
+      left: 0;
+      right: 0;
+      transition: all .8s .6s $cubic-bezier;
+    }
+  }
+
+  &[data-enter-from="top"] {
+    @extend .left-0;
+    @extend .right-0;
+    height: 0;
+    transition: all .6s .3s $cubic-bezier;
+
+    &.open {
+      @extend .px3;
+      @extend .py4;
+      height: 100vh;
+      transition: all .4s $cubic-bezier;
+    }
+  }
+
+  $position: right, left;
+
+  @each $side in $position {
+    &[data-enter-from="#{$side}"] {
+      @extend .bottom-0;
+      #{$side}: -100%;
+      transition: all .8s .4s $cubic-bezier;
+  
+      &.open {
+        @extend .px2;
+        @extend .pt3;
+        #{$side}: 0;
+        transition: all .8s $cubic-bezier;
+      }
+    } 
+  }
+}
+
+/* MENU PRIMARY
+  ----------------------------- */
+.menu--primary {
+  ul {
+    @extend .m0;
+    @extend .p0;
+
+    li {
+      @extend .relative;
+      @extend .inline-block;
+      @extend .list-reset;
+      @extend .px1;
+      transition: all .8s $cubic-bezier; 
+  
+      @media #{$breakpoint-md-mx} {
+        opacity: 0;
+        left: 1rem;
+        width: 100%;
+      }
+  
+      a {
+        @extend .inline-block;
+        text-decoration: none;
+      }
+    }
+  }
+}

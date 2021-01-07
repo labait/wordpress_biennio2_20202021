@@ -1,0 +1,78 @@
+/* COMMON
+   ----------------------------- */
+.slick-slider.flex {
+  .slick-track {
+    @extend .flex;
+
+    .slick-slide {
+      height: auto;
+
+      > div,
+      > div > * {
+        height: 100%;
+      }
+
+      > div > *.flex {
+        display: flex !important;
+      }
+    }
+  }
+}
+
+/* SLIDER ARROW
+   ----------------------------- */
+.slick-slider .slick-arrow {
+  @extend .absolute;
+  @extend .flex;
+  @extend .items-center;  
+  appearance: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* SLIDER DOTS
+  ----------------------------- */
+.slick-slider .slick-dots {
+  @extend .absolute;
+  @extend .m0;
+  @extend .p0;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  li {
+    @extend .inline-block;
+    margin: 0 .3rem;
+
+    button {
+      @extend .border-none;
+      @extend .p0;
+      appearance: none;
+      background: transparent;
+      font-size: 0;
+      cursor: pointer;
+      
+      &:focus {
+        outline: none;
+      }
+
+      &:before {
+        content: '';
+        @extend .inline-block;
+        @extend .circle;
+        height: .8rem;
+        width: .8rem;
+        border: 1px solid #000;
+      }
+    }
+
+    &.slick-active {
+      button:before {
+        background: #000;
+      }
+    }
+  }
+}

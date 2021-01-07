@@ -1,0 +1,39 @@
+// Import all vendors
+@import '~normalize.css';
+@import '~basscss-sass/scss/basscss.scss';
+@import "~basscss-sass/scss/all";
+@import "~basscss-sass/scss/background-colors";
+@import "~basscss-sass/scss/background-images";
+@import "~basscss-sass/scss/border-colors";
+@import "~basscss-sass/scss/btn";
+@import "~basscss-sass/scss/btn-outline";
+@import "~basscss-sass/scss/darken";
+@import "~basscss-sass/scss/highlight-dark";
+@import "~basscss-sass/scss/highlight";
+@import "~basscss-sass/scss/input-range";
+@import "~basscss-sass/scss/media-object";
+@import "~basscss-sass/scss/progress";
+@import "~basscss-sass/scss/responsive-margin";
+@import "~basscss-sass/scss/responsive-padding";
+@import '~slick-carousel/slick/slick.scss';
+@import '~modal-video/scss/modal-video.scss';
+
+// Import utils
+@import 'utils/vars';
+@import 'utils/typography';
+@import 'utils/fonts';
+
+
+// Import all components
+@import 'components/header';
+@import 'components/footer';
+@import 'components/bar';
+@import 'components/slider';
+@import 'components/buttons';
+
+// All
+@import 'base';
+@import 'pages';
+@import 'sections';
+@import 'blocks';
+@import 'previews';

@@ -10,7 +10,7 @@
  *
  * * MySQL settings
  * * Secret keys
- * * Database table prefix
+ * * Database table prefix	
  * * ABSPATH
  *
  * @link https://codex.wordpress.org/Editing_wp-config.php
@@ -29,7 +29,7 @@ define( 'DB_USER', 'root' );
 define( 'DB_PASSWORD', 'root' );
 
 /** MySQL hostname */
-define( 'DB_HOST', '127.0.0.1' );
+define( 'DB_HOST', 'localhost' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -65,8 +65,8 @@ define( 'WP_CACHE_KEY_SALT', 'GFX/:K<uA=8@2-z6Z}~S3WCj+NzKijV%K2Exl^DI3}gMLD%9V8
 $table_prefix = 'IWsFa2fG_';
 
 
-define('WP_HOME','http://localhost/wordpress_biennio2_20202021');
-define('WP_SITEURL','http://localhost/wordpress_biennio2_20202021');
+define('WP_HOME','http://localhost:8888/wordpress_biennio2_202021');
+define('WP_SITEURL','http://localhost:8888/wordpress_biennio2_202021');
 define('FS_METHOD','direct');
 define('WP_MEMORY_LIMIT', '256M');
 define('WPCF7_AUTOP', false);

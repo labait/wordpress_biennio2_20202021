@@ -1,0 +1,46 @@
+
+
+post single.php
+  title
+  body
+  image
+  * Gallery immagini (per quando è finito l'evento)
+
+event (post) single-event.php
+  title
+  body
+  image
+  * Data inizio
+  * Data di fine
+  * Embed accreditamento ()
+  * Gallery immagini (per quando è finito l'evento)
+  * Gallery video
+
+
+resident (post) single-resident.php / preview-resident.php
+  title
+  body
+  image
+  * Indirizzo
+  * Telefono
+  * E-mail
+  * Logo
+  * Abstract
+
+
+service (post) single-service.php
+  title
+  body
+  image
+  * Abstract
+
+---------
+
+homepage (page)
+
+
+workspace (page) è una page con il suo template.
+  title
+  body
+  image
+  *Gallery

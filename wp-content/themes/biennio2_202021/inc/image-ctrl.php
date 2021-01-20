@@ -11,12 +11,12 @@ function print_image($id, $template_size, $ratio, $classes) {
 	$crop = FALSE;
 	$height = 9999;
 
-	$img_default = $is_fly_active ? 
-		str_replace("http://","//",fly_get_attachment_image_src( $id, array($sizes_1x[2], $height), $crop)) : 
+	$img_default = $is_fly_active ?
+		str_replace("http://","//",fly_get_attachment_image_src( $id, array($sizes_1x[2], $height), $crop)) :
 		str_replace("http://","//",wp_get_attachment_url($id, 'medium'));
 
-	$img_placeholder = $is_fly_active ? 
-		str_replace("http://","//",fly_get_attachment_image_src( $id, array($sizes_1x[2] / 20, $height), $crop)) : 
+	$img_placeholder = $is_fly_active ?
+		str_replace("http://","//",fly_get_attachment_image_src( $id, array($sizes_1x[2] / 20, $height), $crop)) :
 		str_replace("http://","//",wp_get_attachment_url($id, 'small'));
 
 	$crop = $ratio ? TRUE : FALSE;
@@ -42,5 +42,16 @@ function print_image($id, $template_size, $ratio, $classes) {
 	$img_default = $is_fly_active ?
 		$image .= '<img class="lazy fluid ' . $classes . ' " src="' . $img_placeholder['src'] . '" data-lazy="' . $img_default['src'] . '" alt=""></picture>':
 		$image .= '<img class="lazy fluid ' . $classes . ' " src="' . $img_placeholder . '" data-lazy="' . $img_default . '" alt=""></picture>';
+	return $image;
+}
+
+
+// ------------------------------------ //
+// THE RETURN OF ULTIMATE IMAGE CONTROLLER
+// ------------------------------------ //
+function responsive_image($obj, $classes) {
+	$ID = $obj['ID'];
+	$sizes = esc_attr(wp_get_attachment_image_srcset($ID));
+	$image = '<img class="'. $classes .'" src="'. $obj['url'] .'" srcset="'. $sizes .'" alt="'. $obj['alt'] .'">';
 	return $image;
 }

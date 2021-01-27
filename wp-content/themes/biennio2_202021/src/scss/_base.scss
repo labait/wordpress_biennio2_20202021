@@ -17,6 +17,26 @@ body {
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  line-height: 116%;
+}
+
+h1, h2 {
+  line-height: 100%;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
 img {
   @extend .align-top;
 
@@ -135,4 +155,14 @@ img {
 
 .pb25 {
   padding-bottom: 2.5rem;
+}
+
+
+.container {
+
+  &--inner {
+    max-width: 86%;
+    @extend .px2;
+    @extend .mx-auto;
+  }
 }

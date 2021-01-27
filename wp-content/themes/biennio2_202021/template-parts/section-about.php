@@ -6,8 +6,8 @@
 
 <section class="section section--about">
   <header>
-    <h2><?php echo $name; ?></h2>
-    <div class="">
+    <h2 class="section__name"><?php echo $name; ?></h2>
+    <div class="section__abstract section__abstract--big">
       <?php echo $abstract; ?>
     </div>
   </header>

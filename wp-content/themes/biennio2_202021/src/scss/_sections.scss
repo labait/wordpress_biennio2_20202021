@@ -1,0 +1,28 @@
+.section {
+  padding: 7.5rem 0 3rem 0;
+
+  &__name {
+    font-size: calc(3rem + 3vw);
+    font-weight: 300;
+    color: $light-grey;
+    text-indent: -0.07em;
+    margin-bottom: 0.35em;
+  }
+
+  &__abstract {
+    font-size: 1.125rem;
+    line-height: 142%;
+    font-weight: 300;
+
+    &--big {
+      font-size: calc(1.125rem + 1.1vw);
+      @media (max-width: 450px) {
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+  &--resident {
+
+  }
+}

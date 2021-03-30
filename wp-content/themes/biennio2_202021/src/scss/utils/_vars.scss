@@ -22,7 +22,9 @@ $bar-spacing: .5rem;
 /* COLORS
    ----------------------------- */
 $primary-color: #F1933C;
+$dark-grey: #4A4949;
 $light-grey: #8B8B8B;
+$mid-grey: #B4B3B3;
 $light-color: #fff;
 
 /* ANIMATION
@@ -35,3 +37,15 @@ $breakpoint-sm-mx: '(max-width: 40em)'; // 640px
 $breakpoint-md-mx: '(max-width: 52em)'; // 832px
 $breakpoint-lg-mx: '(max-width: 64em)'; // 1024px
 $breakpoint-xl-mx: '(max-width: 78em)'; // 1248px
+
+
+/* MIXINS
+   ----------------------------- */
+
+@mixin linear-responsive($small-size, $large-size, $property:'font-size', $small-width: 375, $large-width: 1680, $gutter: 16) {
+
+  $mobile-offset: calc(#{$large-width} / #{$small-width} / #{$gutter} * (#{$large-size} - #{$small-size}));
+  $variable-width: calc((#{$large-size} - (#{$small-size} - #{$mobile-offset})) * #{$gutter} * 100 / #{$large-width});
+
+  #{$property}: calc((1rem * #{$small-size}) - (1rem * #{$mobile-offset}) + (1vw * #{$variable-width}));
+}

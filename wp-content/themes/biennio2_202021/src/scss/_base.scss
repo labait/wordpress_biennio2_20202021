@@ -180,4 +180,59 @@ img {
     font-size: 0;
     z-index: 50;
   }
+
+  &--arrow {
+    color: $primary-color;
+    font-weight: bold;
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 1.5rem;
+      height: 0.875rem;
+      background: url(../assets/arrow-right-dark.svg) center center no-repeat;
+      background-size: contain;
+      position: relative;
+      top: 3px;
+      left: 0.5rem;
+      transform: rotate(0);
+      transition: 0.3s ease;
+      transition-property: transform;
+    }
+
+    &.active,
+    &:hover {
+      text-decoration: none;
+
+      &:after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &--dark {
+    color: $dark-grey;
+  }
+}
+
+
+.title {
+  @include linear-responsive(2, 6);
+  line-height: 112%;
+
+  &--big {
+    @include linear-responsive(3, 8);
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 10rem;
+  }
+}
+
+
+.title + .abstract {
+  margin-top: 1.65rem;
+}
+
+.abstract + .cta {
+  @include linear-responsive(2, 4, 'margin-top');
 }

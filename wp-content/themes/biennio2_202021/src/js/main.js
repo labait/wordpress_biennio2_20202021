@@ -8,9 +8,10 @@ window.onload = () => {
   project.smoothScroll()
   project.menuOverlay()
   project.setupModalVideo()
+  project.setupAccordion()
 
   const bodyClasses = $('body').attr("class").split(/\s+/)
-  
+
   $.each(bodyClasses, function(key, value) {
     switch(value) {
       case "home":

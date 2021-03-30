@@ -92,3 +92,21 @@ export const setupModalVideo = () => {
     new ModalVideo('.js-modal-btn-vimeo', { channel: 'vimeo' })
   }
 }
+
+/* SETUP ACCORDION
+  ----------------------------- */
+export const setupAccordion = () => {
+
+  $('.service--preview .link--dark').each(function( index ) {
+    $(this).on('click', function(event){
+
+      $('.service--preview .service__content').removeClass('show')
+      $(this).closest('.service--preview').find('.service__content').addClass('show')
+
+      $('.service--preview .link--dark').removeClass('active')
+      $(this).addClass('active')
+
+      event.preventDefault()
+    })
+  });
+}

@@ -24,3 +24,7 @@
     </div>
   </div>
 </footer>
+
+<div class="overlay--menu flex flex-wrap items-center">
+  <?php wp_nav_menu( array('theme_location' => 'overlay', 'menu_class' => 'menu menu--overlay m0 p0')); ?>
+</div>

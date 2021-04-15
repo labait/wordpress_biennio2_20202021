@@ -100,13 +100,36 @@ export const setupAccordion = () => {
   $('.service--preview .link--dark').each(function( index ) {
     $(this).on('click', function(event){
 
-      $('.service--preview .service__content').removeClass('show')
-      $(this).closest('.service--preview').find('.service__content').addClass('show')
+      if ($(this).hasClass('active')) {
+        $('.service--preview .service__content').removeClass('show')
+        $('.service--preview .link--dark').removeClass('active')
+      } else {
+        $('.service--preview .service__content').removeClass('show')
+        $(this).closest('.service--preview').find('.service__content').addClass('show')
 
-      $('.service--preview .link--dark').removeClass('active')
-      $(this).addClass('active')
+        $('.service--preview .link--dark').removeClass('active')
+        $(this).addClass('active')
+      }
 
       event.preventDefault()
     })
   });
+}
+
+
+
+/* SETUP ACCORDION
+  ----------------------------- */
+export const setupToggleMenu = () => {
+
+    $('.toggle--menu').on('click', function(){
+      $('body').toggleClass('overlay-menu')
+      $(this).toggleClass('active')
+    })
+
+    $(window).on('resize', function(){
+      $('body').removeClass('overlay-menu')
+      $('.toggle--menu').removeClass('active')
+    })
+
 }

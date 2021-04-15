@@ -1,0 +1,52 @@
+.overlay--menu {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 90;
+  padding-left: 2.75rem;
+
+  transition: 0.4s ease;
+  transition-property: max-height, opacity;
+  max-height: 0;
+  overflow: hidden;
+
+  .overlay-menu & {
+    max-height: 100vh;
+  }
+
+  .menu {
+    @extend .list-reset;
+    .menu-item {
+      a {
+        text-decoration: none;
+        color: $dark-grey;
+        font-size: calc(1.4rem + 0.6vw + 2vh);
+        line-height: 164%;
+        position: relative;
+        left: 0;
+        transition: 0.4s ease;
+        transition-property: color, left;
+
+
+        &:hover {
+          left: 1rem;
+          color: $primary-color;
+        }
+      }
+
+
+      &.current-menu-item {
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+body.overlay-menu {
+  overflow: hidden;
+}

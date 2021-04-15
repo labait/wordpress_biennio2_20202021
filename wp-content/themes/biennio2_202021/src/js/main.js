@@ -6,9 +6,11 @@ import './polyfill'
 window.onload = () => {
   project.lazyLoad()
   project.smoothScroll()
-  project.menuOverlay()
+  //project.menuOverlay()
   project.setupModalVideo()
   project.setupAccordion()
+
+  project.setupToggleMenu()
 
   const bodyClasses = $('body').attr("class").split(/\s+/)
 

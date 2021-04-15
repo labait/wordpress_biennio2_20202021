@@ -10,10 +10,17 @@
           <img class="contain-image" src="<?php echo $logo; ?>"/>
         </a>
       </div>
-      <div class="">
+      <div class="xs-hide sm-hide">
         <nav class="header__nav" role="navigation">
           <?php wp_nav_menu( array('theme_location' => 'primary', 'menu_class' => 'menu menu--primary m0 p0')); ?>
         </nav>
+      </div>
+      <div class="md-hide lg-hide">
+        <div class="toggle--menu flex flex-wrap justify-end">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
       </div>
     </div>
   </div>

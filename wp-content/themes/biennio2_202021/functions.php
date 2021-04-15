@@ -21,6 +21,7 @@ function incode_starter_setup() {
 	register_nav_menus( array(
 		'primary' => esc_html__('Primary','incode_starter'),
 		'secondary' => esc_html__('Secondary','incode_starter'),
+		'overlay' => esc_html__('Overlay','incode_starter'),
 	));
 
 	add_theme_support( 'html5', array(
